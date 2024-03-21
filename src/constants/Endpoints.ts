@@ -1,0 +1,30 @@
+export const Endpoints = {
+	LOGIN: "/auth/login",
+	FORGOT_PASSWORD: "auth/forgot-password",
+	RESET_PASSWORD: "auth/reset-password",
+	SET_PASSWORD: "auth/set-password",
+	VERIFY_EMAIL: "auth/verify",
+	REGISTER: "/organization",
+	CREATE_USER_ACCOUNT: "/auth/register",
+	INVITE_ORGANIZATION_USER: "/auth/invite-user",
+	TEST: "/user/login",
+	GOOGLE_AUTH: "/auth/google",
+	USER: "/user",
+	ORGANIZATION_USERS: "/organization_users/users",
+	ORGANIZATION: "/organization",
+	REMOVE_ORGANIZATION_USERS: "/organization_users",
+
+	WORKSPACE: "/workspace",
+	WORKSPACE_USERS: "/workspace/users",
+	REMOVE_WORKSPACE_USER: "/workspace/remove-user",
+	UPDATE_WORKSPACE_USER_ROLE: "/workspace/update-user-role",
+	MEETINGS: "/meetings",
+	MEETINGS_PARTICIPANT: "/meeting-participants",
+
+	//Modules
+	CREATE_GOALS: "/goals",
+	CREATE_ISSUES: "/issues",
+	CREATE_ACTION_ITEMS: "/action-items",
+	CREATE_METRICS: "/metrics",
+	CREATE_HEADLINES: "/headlines",
+};

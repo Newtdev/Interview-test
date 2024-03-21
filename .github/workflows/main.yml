@@ -1,0 +1,62 @@
+name: Deploying Krext App to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # checkout the repository content to github runner
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # setup nodejs environment
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          check-latest: true
+
+      # install dependencies
+      - name: Install Project dependencies
+        run: yarn install
+
+      # build the react app
+      - name: Build the React app
+        run: yarn build
+        env:
+          CI: false   # Add CI=false environment variable here
+          REACT_APP_KREXT_BASE_URL: https://api.krext.com/api/v1
+          REACT_APP_KREXT_SCOKET_URL: https://api.krext.com/
+          REACT_APP_KREXT_PRIVACY_POLICY: https://krext.com/privacy-policy
+          REACT_APP_KREXT_PORTAL: https://app.krext.com
+          
+
+      # Share artifact inside workflow
+      - name: Share artifact inside workflow
+        uses: actions/upload-artifact@v1
+        with:
+          name: deploy
+          path: "./build"
+
+      # Get artifact
+      - name: Get artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: deploy
+
+      # Remove existing files in /var/www/app.krext.com
+      - name: Remove existing files in /var/www/app.krext.com
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USERNAME }}
+          password: ${{ secrets.DROPLET_PASSWORD }}
+          port: ${{ secrets.DROPLET_PORT }}
+          target: "/var/www/app.krext.com"
+          source: "./build/*"
+          rm: true
+          strip_components: 1

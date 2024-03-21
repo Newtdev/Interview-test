@@ -1,0 +1,140 @@
+.StandardTable {
+  overflow: auto;
+  width: 100%;
+  /* min-height: 300px; */
+  /* box-shadow: 0px 0px 16px 0px rgba(4, 20, 146, 0.08); */
+  max-height: calc(100vh - 250px);
+  background-color: inherit;
+  background-color:#fff;
+  border-radius:16px;
+  font-size: 16px;
+  padding:0 24px;
+  
+}
+
+.StandardTable__table {
+  min-width: 100%;
+  background-color: inherit;
+  border-color: #D8E0E6;
+  color: #45464E;
+  /* text-indent: 0; */
+  /* border-color: inherit; */
+  border-collapse: collapse;
+  /* background-color: red; */
+  border-radius: 10px;
+  
+}
+
+.StandardTable__table__header {
+  top: 0;
+}
+
+.StandardTable__pagination {
+  justify-content: flex-end;
+  bottom: 0;
+}
+
+.StandardTable__table__header,
+.StandardTable__table__footer {
+  font-weight: bold;
+}
+
+.StandardTable__table__header,
+/* .StandardTable__table__footer, */
+.StandardTable__pagination {
+  position: sticky;
+  z-index: 10;
+  background-color: inherit;
+}
+
+.StandardTable__table__header__row,
+.StandardTable__table__body__row,
+.StandardTable__table__footer__row {
+  border-bottom: 1px solid lightgray;
+  min-height: 75px;
+}
+
+.StandardTable__table__header__row--relative,
+.StandardTable__table__body__row--relative,
+.StandardTable__table__footer__row--relative {
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+}
+
+.StandardTable__table__header__row--absolute,
+.StandardTable__table__body__row--absolute,
+.StandardTable__table__footer__row--absolute {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 40px;
+}
+
+.StandardTable__table__header__row__cell,
+.StandardTable__table__body__row__cell,
+.StandardTable__table__footer__row__cell {
+  position: relative;
+  padding: 8px 16px;
+  /* height: 48px; */
+  text-align: left;
+  vertical-align: middle;
+}
+
+.StandardTable__table__header__row__cell--relative,
+.StandardTable__table__body__row__cell--relative,
+.StandardTable__table__footer__row__cell--relative {
+  flex: 1 0 auto;
+}
+
+.StandardTable__table__header__row__cell--absolute,
+.StandardTable__table__body__row__cell--absolute,
+.StandardTable__table__footer__row__cell--absolute {
+  position: absolute;
+  height: 40px;
+}
+
+.StandardTable__loading,
+.StandardTable__empty,
+.StandardTable__error {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.StandardTable__loading,
+.StandardTable__empty,
+.StandardTable__error,
+.StandardTable__pagination {
+  position: sticky;
+  left: 0;
+  right: 0;
+ 
+}
+
+.StandardTable__resizer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: col-resize;
+  user-select: none;
+  touch-action: none;
+}
+
+.StandardTable__resizer.StandardTable__resizing {
+  background: blue;
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .StandardTable__resizer {
+    opacity: 0;
+  }
+
+  *:hover > .StandardTable__resizer {
+    opacity: 0;
+  }
+}

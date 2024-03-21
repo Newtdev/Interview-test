@@ -1,0 +1,15 @@
+.Pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  gap: 2px;
+}
+
+.Pagination__info {
+  margin-right: 16px;
+}
+
+.Pagination__page {
+  padding: 8px;
+}

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkrext=self.webpackChunkkrext||[]).push([[7375],{7375:function(n,e,r){r.r(e),r.d(e,{default:function(){return u}});r(47313);var t=r(46417);function u(){return console.log("====Subscription===="),(0,t.jsx)("div",{children:"Subscription"})}}}]);

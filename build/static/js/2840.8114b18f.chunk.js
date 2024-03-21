@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkrext=self.webpackChunkkrext||[]).push([[2840],{82840:function(e,r,n){n.r(r);n(47313);var s=n(46417);r.default=function(){return(0,s.jsx)("div",{className:"h-screen bg-red-500",children:"404"})}}}]);
